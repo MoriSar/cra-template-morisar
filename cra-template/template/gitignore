@@ -65,5 +65,3 @@ jspm_packages/
 .env.development.local
 .env.test.local
 .env.production.local
-cra-template/template/src
-cra-template/template/public
