@@ -1,26 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { type FC } from 'react';
+import { QueryClient, QueryClientProvider } from 'react-query';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import Router from 'routers/Router';
+import GlobalStyles from 'config/globalStyles';
+
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      cacheTime: 0,
+      refetchOnWindowFocus: false,
+      refetchIntervalInBackground: false,
+      retry: false,
+    },
+  },
+});
+
+const App: FC = () => (
+  <>
+    <GlobalStyles />
+    <QueryClientProvider client={queryClient}>
+      <Router />
+    </QueryClientProvider>
+  </>
+);
 
 export default App;
