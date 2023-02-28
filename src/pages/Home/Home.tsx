@@ -1,16 +1,16 @@
-import type { FC } from 'react';
+import { FC, useEffect } from 'react';
 import { useQuery } from 'react-query';
 import { FormattedMessage } from 'react-intl';
 import clsx from 'clsx';
 
-import { getPostById } from '../../api/api';
-import { useEffect } from 'react';
+import getPostById from 'api/api';
 
 interface IHome {
   prop?: unknown;
 }
 
 const Home: FC<IHome> = (props) => {
+  // eslint-disable-next-line no-console
   console.log('Home props:', props);
 
   const { data, isError } = useQuery({
@@ -18,9 +18,8 @@ const Home: FC<IHome> = (props) => {
     queryFn: () => getPostById(123),
   });
 
-  console.log('data: ', data);
-
   useEffect(() => {
+    // eslint-disable-next-line no-console
     console.log('data: ', data);
   }, [data]);
 
