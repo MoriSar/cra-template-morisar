@@ -4,20 +4,57 @@
     "es2021": true
   },
   "extends": [
-    "eslint:recommended",
-    "plugin:react/recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:react-hooks/recommended"
+    "react-app",
+    "airbnb",
+    "airbnb/hooks",
+    "airbnb-typescript",
+    "plugin:import/typescript",
+    "plugin:prettier/recommended"
   ],
   "overrides": [],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
     "ecmaVersion": "latest",
-    "sourceType": "module"
+    "sourceType": "module",
+    "project": "./tsconfig.json"
   },
-  "plugins": ["react", "@typescript-eslint"],
+  "plugins": ["react", "@typescript-eslint", "prettier"],
   "rules": {
-    "strict": 1,
-    "react/react-in-jsx-scope": 0
+    // JS
+    "no-plusplus": "off",
+    "no-continue": "off",
+    "no-restricted-syntax": "off",
+    "arrow-body-style": "warn",
+    // TS
+    "no-use-before-define": "off",
+    "@typescript-eslint/no-use-before-define": "error",
+    "no-shadow": "off",
+    "@typescript-eslint/no-shadow": "error",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    // React
+    "react/react-in-jsx-scope": "off",
+    "react/function-component-definition": "off",
+    "react/require-default-props": "off",
+    "react/no-unused-prop-types": "off",
+    // Prettier
+    "indent": "off",
+    "comma-dangle": "off",
+    "operator-linebreak": "off",
+    "object-curly-newline": "off",
+    "implicit-arrow-linebreak": "off",
+    "wrap-iife": "off",
+    "function-paren-newline": "off",
+    "space-in-parens": "off",
+    "linebreak-style": "off",
+    "no-confusing-arrow": "off",
+    "generator-star-spacing": "off",
+    "no-spaced-func": "off",
+    "func-call-spacing": "off",
+    "react/jsx-curly-newline": "off",
+    "react/jsx-one-expression-per-line": "off",
+    "react/jsx-wrap-multilines": "off"
   }
 }

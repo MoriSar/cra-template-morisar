@@ -6,9 +6,9 @@ type Post = {
   body: string;
 };
 
-export const getPostById = async (id: number): Promise<Post> => {
+export default async function getPostById(id: number): Promise<Post> {
   const { data } = await axios.get(
     `https://jsonplaceholder.typicode.com/posts/${id}`
   );
   return data;
-};
+}

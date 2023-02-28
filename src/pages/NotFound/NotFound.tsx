@@ -7,7 +7,9 @@ interface INotFound {
 
 const NotFound: FC<INotFound> = (props) => {
   const error = useRouteError();
+  // eslint-disable-next-line no-console
   console.log('NotFound props:', props);
+  // eslint-disable-next-line no-console
   console.error(error);
   return <div>NotFound</div>;
 };
